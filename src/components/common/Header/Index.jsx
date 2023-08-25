@@ -13,14 +13,14 @@ function Header(props) {
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <i className="fa fa-bars"></i>
                     </button>
-                    <Link className="navbar-brand navbar-brand-image" to="/">
+                    {/* <Link className="navbar-brand navbar-brand-image" to="/">
                         <div className="hidden-xs">
                             <img src="/assets/images/logo.png" alt="Logo" />
                         </div>
                         <div className="visible-xs">
                             <img src="/assets/images/logo.png" alt="Logo" />
                         </div>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className="navbar-collapse collapse">
                     <MobileMenu></MobileMenu>
