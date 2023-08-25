@@ -1,5 +1,5 @@
 import OrganizationsApi from 'api/OrganizationsApi';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import TreeView from '../@extensions/TreeView';
 
 OrganizationsMenu.propTypes = {};
@@ -9,9 +9,6 @@ function OrganizationsMenu(props) {
     const [loading, setLoading] = useState(true);
     const { setOrganizationId, setFieldId } = props;
 
-    useEffect(() => {
-        getAllGroupFields();
-    }, []);
     const handleChangeOrganization = (id) => {
         setOrganizationId(Number.parseInt(id));
     };
@@ -20,7 +17,7 @@ function OrganizationsMenu(props) {
         setFieldId(Number.parseInt(fieldId));
     };
 
-    const getAllGroupFields = async () => {
+    const getAllGroupFields = useCallback(async () => {
         try {
             setLoading(true);
             const { data } = await OrganizationsApi.getGroupFields();
@@ -48,8 +45,14 @@ function OrganizationsMenu(props) {
 
             setGroupFields(dt);
             setLoading(false);
-        } catch (error) {}
-    };
+        } catch (error) {
+            // Handle error
+        }
+    }, [handleChangeOrganization, handleChangeField]);
+
+    useEffect(() => {
+        getAllGroupFields();
+    }, [getAllGroupFields]);
 
     return (
         <div className="panel panel-default panel-primary">
