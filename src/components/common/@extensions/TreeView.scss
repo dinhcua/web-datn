@@ -1,0 +1,19 @@
+.treeview {
+    & > .toggle {
+        pointer-events: all;
+        cursor: pointer;
+
+        &:hover {
+            color: #666;
+            fill: #666;
+        }
+    }
+
+    a {
+        color: #000;
+
+        &:hover {
+            color: #ad4105;
+        }
+    }
+}

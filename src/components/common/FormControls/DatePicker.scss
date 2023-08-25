@@ -1,0 +1,21 @@
+.react-datepicker {
+    font-size: 14px !important;
+
+    &-popper {
+        z-index: 9999;
+    }
+
+    &-wrapper {
+        width: 100%;
+    }
+
+    &__day-name, &__day, &__time-name {
+        width: 2.5rem;
+        line-height: 2.5rem;
+        margin: 0.2rem;
+    }
+}
+
+.select-datetime {
+    padding-left: 8px !important;
+}

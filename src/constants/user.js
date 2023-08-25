@@ -1,0 +1,1 @@
+export const ROLES = ['Công dân', 'Cán bộ', 'Quản trị viên'];
